@@ -1,0 +1,368 @@
+:root {
+  --navy: #28533f;
+  --blue: #477b58;
+  --cyan: #83aa83;
+  --ink: #263d30;
+  --muted: #78877b;
+  --bg: #f5f8f2;
+  --line: #e2eade;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+.hero {
+  min-height: 275px;
+  background: linear-gradient(115deg, #1e4233 0%, #35694a 58%, #54835b 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 54px 20px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero::before {
+  width: 520px;
+  height: 520px;
+  background: rgba(255, 255, 255, .07);
+  left: -170px;
+  top: -300px;
+}
+
+.hero::after {
+  width: 420px;
+  height: 420px;
+  background: rgba(16, 48, 29, .16);
+  right: -150px;
+  bottom: -300px;
+}
+
+.hero-content { position: relative; z-index: 1; }
+
+.hero h1 {
+  font-size: clamp(2.1rem, 6vw, 3.2rem);
+  line-height: 1.12;
+  letter-spacing: .02em;
+  margin: 0 0 20px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  margin: 0;
+  color: #eaf2e8;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(35, 72, 45, .08);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 17px 12px;
+  gap: 10px 28px;
+}
+
+nav a {
+  font-size: .91rem;
+  font-weight: 700;
+  color: #304b39;
+  text-decoration: none;
+}
+
+nav a:hover { color: var(--blue); }
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 22px 65px;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+  gap: 50px;
+  padding: 18px 18px 55px;
+  border-bottom: 1px solid var(--line);
+}
+
+.photo-frame {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1.12;
+  padding: 10px;
+  border-radius: 32px;
+  background: #e1eddf;
+  box-shadow: 0 16px 35px rgba(57, 104, 65, .12);
+  margin: auto;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #f4f8f1, #dcebdc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #356b45;
+  text-align: center;
+}
+
+.initials {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -.06em;
+}
+
+.photo-placeholder small {
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #788f78;
+}
+
+.intro-copy .hello {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #294b36;
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+.intro-copy .hello span { color: var(--blue); }
+
+.intro-copy p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 0 0 25px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 15px 29px;
+  border-radius: 15px;
+  background: linear-gradient(110deg, #39734d, #79a96e);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(53, 111, 66, .2);
+}
+
+.section { padding: 62px 0 8px; }
+
+.kicker {
+  font-size: .83rem;
+  letter-spacing: .2em;
+  font-weight: 800;
+  color: #65966a;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 2.65rem);
+  line-height: 1.18;
+  color: #294d37;
+  margin: 0 0 30px;
+  font-weight: 800;
+}
+
+.info-card,
+.education-card,
+.code-card {
+  background: #fff;
+  border: 1px solid #e5ecdf;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(42, 75, 46, .055);
+}
+
+.info-row { margin: 10px 0 20px; }
+.info-row:last-child { margin-bottom: 0; }
+
+.info-row strong {
+  display: block;
+  color: #354f3b;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.info-row span {
+  display: block;
+  color: #7a897b;
+  font-size: 1.13rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.edu-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #354f3b;
+  margin: 0 0 8px;
+}
+
+.edu-card-sub {
+  color: #7a897b;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.skill {
+  background: #fff;
+  border: 1px solid #e5ecdf;
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 0 8px 22px rgba(42, 75, 46, .045);
+}
+
+.skill-name {
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin: 0 0 5px;
+  color: #354f3b;
+}
+
+.skill-level {
+  font-size: .9rem;
+  color: #849184;
+  margin: 0;
+}
+
+.code-card p {
+  color: #7a897b;
+  margin: 0;
+  line-height: 1.8;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 18px 38px;
+  color: #849184;
+  font-size: .85rem;
+}
+
+@media (max-width: 700px) {
+  .hero { min-height: 275px; }
+  .hero h1 { font-size: 2.25rem; }
+
+  nav {
+    gap: 10px 22px;
+    padding: 16px 9px;
+  }
+
+  nav a { font-size: .85rem; }
+
+  main { padding: 28px 18px 50px; }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 12px 4px 42px;
+    text-align: center;
+  }
+
+  .photo-frame { max-width: 300px; }
+  .intro-copy p { font-size: 1rem; }
+  .section { padding-top: 52px; }
+
+  .info-card,
+  .education-card,
+  .code-card {
+    padding: 25px 24px;
+  }
+
+  .skills-grid { gap: 12px; }
+  .skill { padding: 17px; }
+}
+
+@media (max-width: 380px) {
+  nav { gap: 9px 15px; }
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+
+/* Uploaded profile photo */
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 24px;
+}
+
+/* Java project and source-code panel */
+.project-description {
+  color: #78877b;
+  margin: 0 0 20px;
+  line-height: 1.8;
+}
+
+.game-download {
+  margin-bottom: 18px;
+}
+
+.code-details {
+  margin-top: 18px;
+  border: 1px solid #e2eade;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f7faf5;
+}
+
+.code-details summary {
+  cursor: pointer;
+  padding: 15px 18px;
+  color: #28533f;
+  font-weight: 700;
+}
+
+.code-details pre {
+  margin: 0;
+  padding: 18px;
+  overflow-x: auto;
+  background: #172b20;
+  color: #e5f1e6;
+  font: 13px/1.6 Consolas, "Courier New", monospace;
+  white-space: pre;
+}
+
+.code-details code {
+  font: inherit;
+}

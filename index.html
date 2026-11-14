@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1556a8">
+  <title>Karl Aethan D. Galino | Personal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>KARL AETHAN D. GALINO</h1>
+      <p>BS Information Technology | College Student</p>
+    </div>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a>
+    <a href="#personal">Personal Information</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#java">Java Code</a>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <div class="photo-frame">
+        <img class="profile-photo" src="profile-photo.jpg" alt="Portrait of Karl Aethan D. Galino">
+      </div>
+      <div class="intro-copy">
+        <h2 class="hello">Hello, I'm <span>Aethan!</span></h2>
+        <p>I am an Information Technology student interested in programming and technology. I enjoy learning new things and improving my skills in computer programming.</p>
+        <a class="cta" href="#personal">Explore My Profile</a>
+      </div>
+    </section>
+
+    <section class="section" id="personal">
+      <p class="kicker">Get to know me</p>
+      <h2>Personal Information</h2>
+      <div class="info-card">
+        <div class="info-row"><strong>Name:</strong><span>Karl Aethan D. Galino</span></div>
+        <div class="info-row"><strong>Age:</strong><span>18 years old</span></div>
+        <div class="info-row"><strong>Course:</strong><span>Bachelor of Science in Information Technology</span></div>
+        <div class="info-row"><strong>School:</strong><span>Our Lady of the Sacred Heart College of Guimba, Inc. (OLSHCO)</span></div>
+        <div class="info-row"><strong>Email:</strong><span>galinokarlaethangmail.com</span></div>
+        <div class="info-row"><strong>Address:</strong><span>Guimba, Nueva Ecija, Philippines</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <p class="kicker">My academic journey</p>
+      <h2>Education</h2>
+      <div class="education-card">
+        <p class="edu-card-title">Bachelor of Science in Information Technology</p>
+        <p class="edu-card-sub">Our Lady of the Sacred Heart College of Guimba, Inc. (OLSHCO)</p>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <p class="kicker">What I'm learning</p>
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <article class="skill"><p class="skill-name">HTML</p><p class="skill-level">Intermediate</p></article>
+        <article class="skill"><p class="skill-name">CSS</p><p class="skill-level">Beginner</p></article>
+        <article class="skill"><p class="skill-name">Java</p><p class="skill-level">Beginner</p></article>
+        <article class="skill"><p class="skill-name">MySQL</p><p class="skill-level">Beginner</p></article>
+      </div>
+    </section>
+
+
+    <section class="section" id="java">
+      <p class="kicker">My programming project</p>
+      <h2>Number Guessing Game</h2>
+      <div class="code-card">
+        <p class="project-description">A Java console game that generates a random number from 1 to 100. The player keeps guessing, receives “too low” or “too high” hints, and can play again after winning.</p>
+        <a class="cta game-download" href="Game.java" download>Download Game.java</a>
+        <details class="code-details">
+          <summary>View Java source code</summary>
+          <pre><code>
+import java.util.Scanner;
+import java.util.Random;
+
+public class NumberGuessingGame {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+
+        int secretNumber;
+        int guess;
+        int attempts;
+        String playAgain;
+
+        System.out.println(&quot;==============================&quot;);
+        System.out.println(&quot;     NUMBER GUESSING GAME&quot;);
+        System.out.println(&quot;==============================&quot;);
+
+        do {
+            // Generate random number from 1 to 100
+            secretNumber = random.nextInt(100) + 1;
+
+            attempts = 0;
+
+            System.out.println(&quot;\nGuess the number from 1 to 100!&quot;);
+
+            // Loop until the player guesses correctly
+            do {
+                System.out.print(&quot;Enter your guess: &quot;);
+                guess = input.nextInt();
+
+                attempts++;
+
+                if (guess &lt; secretNumber) {
+                    System.out.println(&quot;Too low! Try again.&quot;);
+                } else if (guess &gt; secretNumber) {
+                    System.out.println(&quot;Too high! Try again.&quot;);
+                } else {
+                    System.out.println(&quot;Correct! You won!&quot;);
+                }
+
+            } while (guess != secretNumber);
+
+            // Display game result
+            System.out.println(&quot;\n==============================&quot;);
+            System.out.println(&quot;          GAME RESULT&quot;);
+            System.out.println(&quot;==============================&quot;);
+
+            System.out.println(&quot;Secret Number: &quot; + secretNumber);
+            System.out.println(&quot;Total Attempts: &quot; + attempts);
+
+            System.out.print(&quot;\nPlay again? (Y/N): &quot;);
+            playAgain = input.next();
+
+        } while (playAgain.equalsIgnoreCase(&quot;Y&quot;));
+
+        System.out.println(&quot;\nThank you for playing!&quot;);
+
+        input.close();
+    }
+}
+</code></pre>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Karl Aethan D. Galino · BS Information Technology · OLSHCO</footer>
+</body>
+</html>
